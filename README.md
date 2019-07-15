@@ -12,8 +12,12 @@ let itemCost = 45.0
 let nyTax = 0.08775
 
 func totalWithTax() {
-
+    let totalTax = itemCost * nyTax
+    let costAfterTax = itemCost + totalTax
+    let shortenedCostOfItems = (costAfterTax * 100).rounded()/100
+    print(shortenedCostOfItems)
 }
+totalWithTax()
 ```
 
 Then, modify the function you implemented to have a return type of `Int`, and use an external name that looks more readable. Function calls should look something like "total cost of the item after tax"
@@ -32,6 +36,22 @@ if todaysTemperature <= 40 {
 } else {
     print("Weather is moderate.")
 }
+
+//function version
+
+func weatherStatus(temp x: Int) -> String {
+    var whatsTheStatus = ""
+    if x <= 40 {
+        whatsTheStatus = "It's cold out."
+    } else if x >= 85 {
+        whatsTheStatus = "It's really warm."
+    } else {
+        whatsTheStatus = "Weather is moderate."
+    }
+    print(whatsTheStatus)
+    return whatsTheStatus
+}
+weatherStatus(temp: todaysTemperature)
 ```
 
 
@@ -47,6 +67,19 @@ Input: `min2(a:1, b:2)`
 
 Output: `1`
 
+```swift
+func min2(a: Int, b: Int) -> Int {
+    var smallest = 0
+    if a < b {
+        smallest += a
+    } else {
+        smallest += b
+    }
+    return smallest
+}
+
+min2(a: 1, b: 2)
+```
 
 ## Question 4
 
